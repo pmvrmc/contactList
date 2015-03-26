@@ -1,0 +1,13 @@
+{
+  "name": "contactList",
+  "author": "Pedro Matos de Carvalho",
+  "version": "0.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "getconfig": "^0.3.0",
+    "hapi": "^8.1.0",
+    "hapi-mongoose-db-connector": "^2.0.1",
+    "mongoose": "^3.8.24",
+    "swig": "^1.4.2"
+  }
+}

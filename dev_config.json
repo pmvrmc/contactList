@@ -1,0 +1,11 @@
+{
+    "http": {
+        "listen": "localhost",
+        "port": 3000
+    },
+    "db":{
+      "url" : "ds037611.mongolab.com:37611/contact-lis",
+      "user" : "contactListAdmin",
+      "pwd" : "A56yQyPXEUxG"
+    }
+}

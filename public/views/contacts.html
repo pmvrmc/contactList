@@ -1,0 +1,9 @@
+<div class="container">
+	<div class="row">
+		<div class="list-group">
+			<div ng-repeat="contact in contacts | filter:filterHooks" class="row">
+				{{contact.name}} | {{contact.email}} | {{contact.address}}
+			</div>
+		</div>
+	</div>
+</div>
