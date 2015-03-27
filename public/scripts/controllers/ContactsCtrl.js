@@ -3,8 +3,8 @@
 /* Controllers */
 
 angular.module('contactList')
-.controller('ContactsCtrl', ['$scope', function($scope) {
+.controller('ContactsCtrl', ['$scope', 'contactList' function($scope, contactList) {
 
-  $scope.contactList = {};
+  $scope.contactList = contactList;
     
 }]);
