@@ -10,6 +10,10 @@ contactListServices.factory('contactService', function($http) {
         				.then(function(result) {
 	                        return result.data;
                         });
+    },
+
+    createContact: function (contact) {
+        return $http.post('/contacts/' + contact.name);
     }
   };
 });

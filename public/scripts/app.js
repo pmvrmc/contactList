@@ -14,7 +14,7 @@ config(['$routeProvider', function($routeProvider) {
     controller: 'ContactsCtrl',
       resolve: {
         contactList: function (contactService) {
-          return contactService.getContacts()
+          return contactService.getContacts();
         }
       }
   });
