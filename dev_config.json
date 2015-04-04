@@ -4,7 +4,7 @@
         "port": 3000
     },
     "db":{
-      "url" : "ds037611.mongolab.com:37611/contact-lis",
+      "url" : "ds037611.mongolab.com:37611/contact-list",
       "user" : "contactListAdmin",
       "pwd" : "A56yQyPXEUxG"
     }
