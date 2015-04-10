@@ -28,7 +28,7 @@ var register = function (plugin, options, next) {
     method: 'POST',
     path: '/contacts/{id}',
     handler: function(request, reply){
-      var query = {id : request.payload.id}; 
+      var query = {name : request.payload.id}; 
       var options = {upsert: true};
       Contact.findOneAndUpdate(query, request.payload, options, function(err, result){
          if(err) throw err;
@@ -39,9 +39,9 @@ var register = function (plugin, options, next) {
 
   plugin.route({
     method: 'DELETE',
-    path: '/contacts/{id}',
+    path: '/contacts/{name}',
     handler: function(request, reply){
-      var query = {_id : request.params.id};
+      var query = {name : request.params.name};
       Contact.remove(query, function (err) {
         if(err) throw err;
         reply().code(204).header('message', 'contact deleted successfully');

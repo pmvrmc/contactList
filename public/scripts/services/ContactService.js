@@ -13,7 +13,11 @@ contactListServices.factory('contactService', function($http) {
     },
 
     createContact: function (contact) {
-        return $http.post('/contacts/' + contact.name);
+        return $http.post('/contacts/' + contact.name, contact);
+    },
+
+    deleteContact: function (contact) {
+        return $http.delete('/contacts/' + contact.name);
     }
   };
 });
