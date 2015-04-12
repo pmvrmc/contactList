@@ -3,6 +3,10 @@
   "author": "Pedro Matos de Carvalho",
   "version": "0.0.1",
   "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "postinstall": "bower install"
+  },
   "dependencies": {
     "getconfig": "^0.3.0",
     "hapi": "^8.1.0",
