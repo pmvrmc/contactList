@@ -11,8 +11,8 @@ var defaultApi = require('./server/routes/defaultApi');
 // Create a server with a host and port
 var server = new Hapi.Server();
 server.connection({
-  host: config.http.listen,
-  port: config.http.port
+  host: '0.0.0.0',
+  port: process.env.PORT || config.http.port
 });
 
 
