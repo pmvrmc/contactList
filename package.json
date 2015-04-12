@@ -1,7 +1,7 @@
 {
   "name": "contactList",
   "author": "Pedro Matos de Carvalho",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "index.js",
   "dependencies": {
     "getconfig": "^0.3.0",
