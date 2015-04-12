@@ -1,11 +1,60 @@
 <div class="row">
   <div class="col-md-12">
-    <ng-form>
-        <fieldset>
-            <input class="form-control" placeholder="Name" type="text" ng-model="contact.name">
-            <input class="form-control" placeholder="Email" type="text" ng-model="contact.email">
-            <input class="btn btn-lg btn-info btn-block" type="submit" ng-click="submit(contact)" value="Create Contact">
-        </fieldset>
+    <ng-form class="form-group">
+        <div class="row">
+            <div class="col-md-3">
+                <label for="contactName">Nome</label>
+            </div>
+            <div class="col-md-8">
+                <input class="form-control" id="contactName" placeholder="Nome" type="text" ng-model="contact.name"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="contactAddress">Morada</label>
+            </div>
+            <div class="col-md-8">
+                <input class="form-control" id="contactAddress" placeholder="Morada" type="text" ng-model="contact.address"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="contactBirthDate">Data de Nascimento</label>
+            </div>
+            <div class="col-md-8">
+                <input class="form-control" id="contactBirthDate" placeholder="Data de Nascimento" type="text" ng-model="contact.birthDate"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="contactTelephone">Telefone</label>
+            </div>
+            <div class="col-md-8">
+                <input class="form-control" id="contactTelephone" placeholder="Telefone" type="text" ng-model="contact.telephone"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="contactLocation">Localidade</label>
+            </div>
+            <div class="col-md-8">
+	       	    <select class="form-control" id="contactLocation" ng-model="selectedLocation" ng-options="location.name for location in CL">
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <label for="contactEmail">Email</label>
+            </div>
+            <div class="col-md-8">
+                <input class="form-control" id="contactEmail" placeholder="Email" type="email" ng-model="contact.email"/>
+            </div>
+        </div>
+        <br/>
+        <div>
+                <button class="btn btn-info pull-left" ng-click="submit(contact)">Submeter</button>
+                <button class="btn btn-info pull-right" ng-click="createLocation()">Nova Localização</button>
+        </div>
     </ng-form>
   </div>
 </div>

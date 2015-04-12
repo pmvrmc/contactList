@@ -4,7 +4,6 @@ var contactSchema = new mongoose.Schema({
   name: String,
   address: String,
   birthDate: Date,
-  location: String,
   telephone: Number,
   email: String,
 });

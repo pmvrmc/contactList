@@ -13,7 +13,7 @@ config(['$routeProvider', function($routeProvider) {
     templateUrl: '../public/views/contacts.html',
     controller: 'ContactsCtrl',
       resolve: {
-        contactList: function (contactService) {
+        rawContactList: function (contactService) {
           return contactService.getContacts();
         }
       }

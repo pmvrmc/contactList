@@ -1,12 +1,31 @@
-<div class="container">
-	<div class="row">
-		<div ng-if="!contacts" ng-click="createContact">
-			<input class="btn btn-lg btn-info btn-block" type="submit" ng-click="createContact()" value="Add some contacts!">
-		</div>	
-		<div class="list-group">
-			<div ng-repeat="contact in contactList" class="row">
-				{{contact.name}} | {{contact.email}} | {{contact.address}}
-				<button clas="btn btn-error" ng-click="deleteContact(contact)">Delete</button>
+<div class="container containter-custom">
+	<div class="container-top">
+		<div class="row">
+			<div class="col-md-12">
+				<span class="container-font">Lista de Contactos</span>
+			</div>
+		</div>
+	</div>
+	<br/>
+
+	<div class="container-main">
+		<div class="row">
+			<div class="col-md-4">
+			  	<label for="contactFilter">Procurar</label>
+		    	<input class="form-control" id="contactFilter" type="text" ng-model="search"/>
+		    </div>
+			<div class="col-md-8">
+				<button class="btn btn-info pull-right" ng-click="createContact()">Criar Contacto</button>
+			</div>
+		</div>
+		
+		<br/>
+
+		<div class="row">
+			<div class="list-group">
+				<div ng-repeat="contact in contactList | filter:search | orderBy:contact.name">
+					<a href="" class="list-group-item col-md-12" ng-click="createContact(contact, true)">{{contact.name}} | {{contact.email}} | {{contact.telephone}} <button class="btn btn-danger pull-right" ng-click="deleteContact(contact)">Delete</button></a>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -4,18 +4,18 @@ var register = function (plugin, options, next) {
 
   plugin.route({
     method: 'GET',
-    path: '/locations',
+    path: '/contactList',
     handler: function(request, reply){
       Location.find(function (err, result) {
         if(err) throw err;
-        reply(result).code(200).header('message', 'locations returned successfully');
+        reply(result).code(200).header('message', 'contact list returned successfully');
       });
     }
   });
 
   plugin.route({
     method: 'GET',
-    path: '/locations/{id}',
+    path: '/contactList/{id}',
     handler: function(request, reply){
       Location.findById(request.params.id, function (err, result) {
         if(err) throw err;
@@ -26,11 +26,13 @@ var register = function (plugin, options, next) {
 
   plugin.route({
     method: 'POST',
-    path: '/locations/{id}',
+    path: '/location/{locationId}',
     handler: function(request, reply){
-      var query = {id : request.payload.id}; 
+      var location = new Location();
+      location.name = request.params.locationId;
+      var query = {id : request.params.locationId}; 
       var options = {upsert: true};
-      Location.findOneAndUpdate(query, request.payload, options, function(err, result){
+      Location.findOneAndUpdate(query, location, options, function(err, result){
          if(err) throw err;
           reply().code(201).header('message', 'location upserted successfully');
       });
@@ -39,7 +41,7 @@ var register = function (plugin, options, next) {
 
   plugin.route({
     method: 'DELETE',
-    path: '/locations/{id}',
+    path: '/contactList/{id}',
     handler: function(request, reply){
       var query = {_id : request.params.id};
       Location.remove(query, function (err) {

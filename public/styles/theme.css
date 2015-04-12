@@ -1,0 +1,23 @@
+.container-top {
+  margin-top: 5%;
+  background-color: #0288d1;
+  border-radius: 6px;
+}
+
+.container-main {
+  background-color: #e5e5e5;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 1% 5%;
+}
+
+.container-font {
+  color: #fff;
+  margin-left: 35%;
+  margin-right: 35%;
+  font: 20px arial;
+}
+
+.containter-custom {
+  max-width: 730px;
+}
